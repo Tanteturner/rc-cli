@@ -37871,6 +37871,31 @@
             "type":"lifthill",
             "startIndex":10,
             "endIndex":50
+        },
+        {
+            "type":"lift 2",
+            "startIndex":100,
+            "endIndex":200
+        },
+        {
+            "type":"loop",
+            "startIndex":300,
+            "endIndex":400
+        },
+        {
+            "type":"loop",
+            "startIndex":500,
+            "endIndex":600
+        },
+        {
+            "type":"loop",
+            "startIndex":700,
+            "endIndex":800
+        },
+        {
+            "type":"loop",
+            "startIndex":900,
+            "endIndex":1000
         }
     ]
 }
