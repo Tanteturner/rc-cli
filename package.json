@@ -11,7 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "chalk": "^5.4.1",
-    "commander": "^13.1.0"
+    "commander": "^13.1.0",
+    "three": "^0.175.0"
   },
   "bin": {
     "orcf": "./index.js"

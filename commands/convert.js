@@ -2,12 +2,13 @@ import fs from 'node:fs';
 import path from 'node:path';
 import config from '../config.js';
 import output from '../output.js';
+import { FileManagement } from '../common/fileManagement.js';
 
 function readNl2Csv(inputPath, delimiter){
     let points = []
 
     try {
-        const data = fs.readFileSync(inputPath, 'utf8');
+        const data = FileManagement.loadFile(inputPath);
 
         let lines = data.split(/\r\n|\r|\n/).map(line => line.split(delimiter));
         
@@ -53,13 +54,7 @@ function convert(inputPath) {
 
     const exportPath = path.format({ ...path.parse(inputPath), base: '', ext:'.orcf'})
 
-    fs.writeFile(exportPath, JSON.stringify(fileData), err => {
-        if (err) {
-            output.error(err);
-        } else {
-            output.info(`Saved converted file to ${exportPath}`)
-        }
-    });
+    FileManagement.saveOrcf(exportPath, fileData)
 }
 
 export default convert;
